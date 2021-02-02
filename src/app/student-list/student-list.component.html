@@ -1,0 +1,43 @@
+<h1>Students-List</h1>
+<div class="studList">
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+        </tr>
+        <tr *ngFor="let stud of students"  (click)="getDetails(stud.studId)">
+            <td>{{stud.studId}}</td>
+            <td>{{stud.studName}}</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Light Box-->
+<div class="lightBox" id="lightBox">
+    <h1>Student's Details</h1>
+    <span class="close cursor" (click)="closeBox()">&times;</span>
+    <div class="boxContent">
+        <table>
+            <tr>
+                <th>ID</th>
+                <td>{{student?.studId}}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{student?.studName}}</td>
+            </tr>
+            <tr>
+                <th>Roll No</th>
+                <td>{{student?.studRollNo}}</td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td>{{student?.studClass}}</td>
+            </tr>
+            <tr>
+                <th>Date of birth</th>
+                <td>{{student?.studDOB|date:"dd/MM/yyyy"}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
